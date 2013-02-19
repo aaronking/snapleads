@@ -1,10 +1,18 @@
+
+<% if user_signed_in? %>
+<h1>I love you!</h1>
+<p>This is as far as I got. I'll add all that pinteresty stuff later.</p>
+
+<% else %>
 <div class="hero-unit">
 	<h1>Welcome to Pinterestefani!</h1>
 	<p>
 		This site kicks ass.
 	</p>
 	<p>
-		<%= link_to "Sign up now!", "http://snapdocs.com", class: "btn btn-primary btn-large" %>
+		<%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-primary btn-large" %>
 	</p>
 </div>
+
+<% end%>
 
