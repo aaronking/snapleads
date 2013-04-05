@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <div class="row">
     <div class="span2">
 <h2>Leads</h2>
@@ -6,14 +7,14 @@
 <%= link_to 'Add New Lead', new_lead_path, class: 'btn btn-primary' %>
 </div>
 </div>
-<table class="table table-striped">
+<table class="table table-striped table-bordered table-hover">
   <tr>
     <th>Company</th>
     <th>Contact</th>
     <th>Phone</th>
     <th>Website</th>
     <th>Email</th>
-    <th>Notes</th>
+    <th class="hidden-tablet">Notes</th>
     <th>Last Updated</th>    
     <th></th>
     <th></th>
@@ -27,7 +28,7 @@
     <td><%= lead.phone %></td>
     <td><%= lead.website %></td>
     <td><%= lead.email %></td>
-    <td><%= lead.notes %></td>
+    <td class="hidden-tablet"><%= lead.notes %></td>
     <td><%= lead.updated_at %></td>    
     <td><%= link_to 'Show', lead %></td>
     <td><%= link_to 'Edit', edit_lead_path(lead) %></td>
@@ -36,5 +37,21 @@
 <% end %>
 </table>
 <br />
+
+<% else %>
+<div class="hero-unit">
+    <h1>Welcome to SnapLeads</h1>
+    <p>
+        The simplest CRM ever.
+    </p>
+    <p>
+        <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-primary btn-large" %>
+    </p>
+</div>
+
+<% end%>
+
+
+
 
 
