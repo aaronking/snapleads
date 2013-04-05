@@ -1,13 +1,20 @@
-<h1>Listing leads</h1>
-
-<table>
+<div class="row">
+    <div class="span2">
+<h2>Leads</h2>
+</div>
+<div class="span3 offset7">
+<%= link_to 'Add New Lead', new_lead_path, class: 'btn btn-primary' %>
+</div>
+</div>
+<table class="table table-striped">
   <tr>
-    <th>Company name</th>
+    <th>Company</th>
     <th>Contact</th>
     <th>Phone</th>
     <th>Website</th>
-    <th>Notes</th>
     <th>Email</th>
+    <th>Notes</th>
+    <th>Last Updated</th>    
     <th></th>
     <th></th>
     <th></th>
@@ -19,15 +26,15 @@
     <td><%= lead.contact %></td>
     <td><%= lead.phone %></td>
     <td><%= lead.website %></td>
-    <td><%= lead.notes %></td>
     <td><%= lead.email %></td>
+    <td><%= lead.notes %></td>
+    <td><%= lead.updated_at %></td>    
     <td><%= link_to 'Show', lead %></td>
     <td><%= link_to 'Edit', edit_lead_path(lead) %></td>
     <td><%= link_to 'Destroy', lead, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
-
 <br />
 
-<%= link_to 'New Lead', new_lead_path %>
+

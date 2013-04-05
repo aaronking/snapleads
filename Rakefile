@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Pinterest::Application.load_tasks
+SnapLeads::Application.load_tasks

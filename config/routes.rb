@@ -1,4 +1,4 @@
-Pinterest::Application.routes.draw do
+SnapLeads::Application.routes.draw do
   resources :leads
 
 
