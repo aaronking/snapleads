@@ -1,4 +1,7 @@
 Pinterest::Application.routes.draw do
+  resources :leads
+
+
   devise_for :users
 
   get 'about' => 'pages#about'

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Company name:</b>
+  <%= @lead.company_name %>
+</p>
+
+<p>
+  <b>Contact:</b>
+  <%= @lead.contact %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @lead.phone %>
+</p>
+
+<p>
+  <b>Website:</b>
+  <%= @lead.website %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @lead.notes %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @lead.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_lead_path(@lead) %> |
+<%= link_to 'Back', leads_path %>
