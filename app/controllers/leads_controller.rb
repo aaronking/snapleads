@@ -1,8 +1,9 @@
 class LeadsController < ApplicationController
+  before_filter :authenticate_user!
   # GET /leads
   # GET /leads.json
   def index
-    @leads = current_user.leads
+    @leads = @leads = current_user.leads.all
 
     respond_to do |format|
       format.html # index.html.erb
