@@ -2,7 +2,7 @@ class LeadsController < ApplicationController
   # GET /leads
   # GET /leads.json
   def index
-    @leads = Lead.all
+    @leads = current_user.leads
 
     respond_to do |format|
       format.html # index.html.erb
@@ -40,7 +40,7 @@ class LeadsController < ApplicationController
   # POST /leads
   # POST /leads.json
   def create
-    @lead = Lead.new(params[:lead])
+    @lead = current_user.leads.build(params[:lead])
 
     respond_to do |format|
       if @lead.save

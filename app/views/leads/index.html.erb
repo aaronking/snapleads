@@ -1,9 +1,9 @@
 <% if user_signed_in? %>
 <div class="row">
-    <div class="span2">
+    <div class="span3">
 <h2>Leads</h2>
 </div>
-<div class="span3 offset7">
+<div class="pull-right">
 <%= link_to 'Add New Lead', new_lead_path, class: 'btn btn-primary' %>
 </div>
 </div>
@@ -12,27 +12,21 @@
     <th>Company</th>
     <th>Contact</th>
     <th>Phone</th>
-    <th>Website</th>
-    <th>Email</th>
-    <th class="hidden-tablet">Notes</th>
-    <th>Last Updated</th>    
-    <th></th>
-    <th></th>
-    <th></th>
+    <th class="hidden-tablet hidden-phone hidden-desktop-small">Website</th>
+    <th class="hidden-tablet hidden-phone hidden-desktop-small">Email</th>
+    <th class="hidden-tablet hidden-phone hidden-desktop-small">Notes</th>
+    <th class="hidden-tablet hidden-phone hidden-desktop-small">Last Updated</th>    
   </tr>
 
 <% @leads.each do |lead| %>
   <tr>
-    <td><%= lead.company_name %></td>
+    <td><%= link_to lead.company_name, lead %></td>
     <td><%= lead.contact %></td>
     <td><%= lead.phone %></td>
-    <td><%= lead.website %></td>
-    <td><%= lead.email %></td>
-    <td class="hidden-tablet"><%= lead.notes %></td>
-    <td><%= lead.updated_at %></td>    
-    <td><%= link_to 'Show', lead %></td>
-    <td><%= link_to 'Edit', edit_lead_path(lead) %></td>
-    <td><%= link_to 'Destroy', lead, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td class="hidden-tablet hidden-phone hidden-desktop-small"><%= lead.website %></td>
+    <td class="hidden-tablet hidden-phone hidden-desktop-small"><%= lead.email %></td>
+    <td class="hidden-tablet hidden-phone hidden-desktop-small"><%= lead.notes %></td>
+    <td class="hidden-tablet hidden-phone hidden-desktop-small"><%= lead.updated_at.strftime("%d %b %y") %></td>    
   </tr>
 <% end %>
 </table>

@@ -1,7 +1,7 @@
 <%= form_for(@lead) do |f| %>
   <% if @lead.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@lead.errors.count, "error") %> prohibited this lead from being saved:</h2>
+      <h4><%= pluralize(@lead.errors.count, "error") %> prohibited this lead from being saved:</h4>
 
       <ul>
       <% @lead.errors.full_messages.each do |msg| %>
@@ -12,28 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :company_name %><br />
+    <%= f.label :company_name %>
     <%= f.text_field :company_name %>
   </div>
-  <div class="field">
-    <%= f.label :contact %><br />
-    <%= f.text_field :contact %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :website %><br />
+    <div class="field">
+    <%= f.label :website %>
     <%= f.text_field :website %>
   </div>
   <div class="field">
-    <%= f.label :notes %><br />
-    <%= f.text_field :notes %>
+    <%= f.label :contact %>
+    <%= f.text_field :contact %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+  </div>
+    <div class="field">
+    <%= f.label :email %>
     <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %>
+    <%= f.text_field :notes %>
   </div>
   <div class="actions">
     <%= f.submit %>

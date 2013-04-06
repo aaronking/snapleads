@@ -1,10 +1,11 @@
+<%= link_to '<-Back', leads_path, class: "btn btn-primary btn-small" %>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Company name:</b>
-  <%= @lead.company_name %>
+  <h2><%= @lead.company_name %></h2>
+    <b><%= @lead.website %></b>
 </p>
-
+<hr>
 <p>
   <b>Contact:</b>
   <%= @lead.contact %>
@@ -16,8 +17,16 @@
 </p>
 
 <p>
-  <b>Website:</b>
-  <%= @lead.website %>
+  <b>Email:</b>
+  <%= @lead.email %>
+</p>
+<p>
+  <b>Created:</b>
+  <%= @lead.created_at.strftime("%B %d, %Y") %>
+</p>
+<p>
+  <b>Last Updated:</b>
+  <%= @lead.updated_at.strftime("%B %d, %Y %I:%M%p") %>
 </p>
 
 <p>
@@ -25,12 +34,10 @@
   <%= @lead.notes %>
 </p>
 
+<%= link_to 'Edit', edit_lead_path(@lead), class: "btn btn-small"  %> |
+<%= link_to 'Delete', @lead, method: :delete, data: { confirm: 'Are you sure?' } %>
+
 <p>
-  <b>Email:</b>
-  <%= @lead.email %>
+  <b>User:</b>
+  <%= @lead.user_id %>
 </p>
-
-
-<%= link_to 'Edit', edit_lead_path(@lead) %> |
-<%= link_to 'Back', leads_path %>
-
