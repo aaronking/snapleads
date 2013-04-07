@@ -1,11 +1,9 @@
 SnapLeads::Application.routes.draw do
-  resources :leads
-
-
+  resources :leads do
+    resources :comments
+  end
   devise_for :users
-
   get 'about' => 'pages#about'
-
   root :to => 'leads#index'
 
   # The priority is based upon order of creation:

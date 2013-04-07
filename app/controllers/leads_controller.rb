@@ -14,6 +14,9 @@ class LeadsController < ApplicationController
   # GET /leads/1.json
   def show
     @lead = Lead.find(params[:id])
+    @commentable = @lead
+    @comments = @commentable.comments 
+    @comment = Comment.new
 
     respond_to do |format|
       format.html # show.html.erb
