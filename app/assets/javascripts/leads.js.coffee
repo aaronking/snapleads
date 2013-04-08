@@ -4,3 +4,5 @@
 jQuery ->
   $('#leads').dataTable
     bJQueryUI: true
+    iDisplayLength: 50
+    

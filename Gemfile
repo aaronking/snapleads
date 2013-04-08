@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
 gem 'jquery-rails'
-gem 'devise'	
+gem 'devise'		
+gem 'jquery-ui-rails'
 
 group :production do
 	gem 'pg'
@@ -19,6 +20,5 @@ group :assets do
   gem 'bootstrap-sass', '~> 2.3.0.0'
 
   gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
-	gem 'jquery-ui-rails'
-	
+
 end
