@@ -6,7 +6,8 @@
 <div class="pull-right">
 <small>
 	<i><font color="grey">
-	<%= comment.created_at.strftime("%B %d, %Y %I:%M%p") %>
+	
+	Added <%= time_ago_in_words(comment.created_at) %> ago
 	</font></i>
 </small>
 </div>

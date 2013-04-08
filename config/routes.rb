@@ -4,7 +4,7 @@ SnapLeads::Application.routes.draw do
   end
   devise_for :users
   get 'about' => 'pages#about'
-  root :to => 'leads#index'
+  root :to => 'pages#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

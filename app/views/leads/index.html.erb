@@ -1,12 +1,13 @@
 <% if user_signed_in? %>
 <div class="row">
     <div class="span3">
-<h2>Leads</h2>
+        <h2>Leads</h2>
+    </div>
+    <div class="pull-right">
+        <%= link_to 'Add New Lead', new_lead_path, class: 'btn btn-primary' %>
+    </div>
 </div>
-<div class="pull-right">
-<%= link_to 'Add New Lead', new_lead_path, class: 'btn btn-primary' %>
-</div>
-</div>
+<div>
 <table id="leads" class="display">
     <thead>
       <tr>
@@ -33,7 +34,7 @@
     <% end %>
     </tbody>
 </table>
-<br />
+</div>
 
 <% else %>
 <div class="hero-unit">
@@ -46,7 +47,7 @@
     </p>
 </div>
 
-<% end%>
+<% end %>
 
 
 
