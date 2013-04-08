@@ -1,6 +1,6 @@
-<h1>Editing lead</h1>
+<h3>Edit <%= @lead.company_name %></h3>
+<hr>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @lead %> |
-<%= link_to 'Back', leads_path %>
+<%= link_to 'Cancel', leads_path, class: "btn btn-small" %>

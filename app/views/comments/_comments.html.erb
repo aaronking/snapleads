@@ -1,6 +1,16 @@
 <div id="comments">
 <% @comments.each do |comment| %>
+	<hr>
 <div class="comment">
 <%= simple_format comment.content %>
-</div> <% end %>
+<div class="pull-right">
+<small>
+	<i><font color="grey">
+	<%= comment.created_at.strftime("%B %d, %Y %I:%M%p") %>
+	</font></i>
+</small>
+</div>
+<% end %>
+</div> 
+
 </div>
