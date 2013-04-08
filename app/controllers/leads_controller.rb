@@ -2,7 +2,7 @@ class LeadsController < ApplicationController
   # GET /leads
   # GET /leads.json
   def index
-    @leads = current_user.leads.all
+    @leads = current_user ? current_user.leads.all : nil
 
     respond_to do |format|
       format.html # index.html.erb

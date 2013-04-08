@@ -5,4 +5,6 @@ jQuery ->
   $('#leads').dataTable
     bJQueryUI: true
     iDisplayLength: 50
-    
+    bInfo: false
+    bPaginate: false,
+    "sDom": 'l<"dataTables_toolbar">frtip'

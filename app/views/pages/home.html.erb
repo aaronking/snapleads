@@ -1,6 +1,40 @@
 
 <% if user_signed_in? %>
-<a href="/leads">View Leads</a>
+<div class="row">
+    <div class="span3">
+<h2>Leads</h2>
+</div>
+<div class="pull-right">
+<%= link_to 'Add New Lead', new_lead_path, class: 'btn btn-primary' %>
+</div>
+</div>
+<table id="leads" class="display">
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>Contact</th>
+        <th>Phone</th>
+        <th class="hidden-tablet hidden-phone hidden-desktop-small">Website</th>
+        <th class="hidden-tablet hidden-phone hidden-desktop-small">Email</th>
+        <th class="hidden-tablet hidden-phone hidden-desktop-small">Notes</th>
+        <th class="hidden-tablet hidden-phone hidden-desktop-small">Last Updated</th>    
+      </tr>
+    </thead>
+    <tbody>
+    <% @leads.each do |lead| %>
+      <tr>
+        <td><%= link_to lead.company_name, lead %></td>
+        <td><%= lead.contact %></td>
+        <td><%= lead.phone %></td>
+        <td class="hidden-tablet hidden-phone hidden-desktop-small"><%= lead.website %></td>
+        <td class="hidden-tablet hidden-phone hidden-desktop-small"><%= lead.email %></td>
+        <td class="hidden-tablet hidden-phone hidden-desktop-small"><%= lead.notes %></td>
+        <td class="hidden-tablet hidden-phone hidden-desktop-small"><%= lead.updated_at.strftime("%d %b %y") %></td>    
+      </tr>
+    <% end %>
+    </tbody>
+</table>
+<br />
 
 <% else %>
 <div class="hero-unit">
