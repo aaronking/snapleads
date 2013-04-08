@@ -7,28 +7,31 @@
 <%= link_to 'Add New Lead', new_lead_path, class: 'btn btn-primary' %>
 </div>
 </div>
-<table class="table table-striped table-bordered table-hover">
-  <tr>
-    <th>Company</th>
-    <th>Contact</th>
-    <th>Phone</th>
-    <th class="hidden-tablet hidden-phone hidden-desktop-small">Website</th>
-    <th class="hidden-tablet hidden-phone hidden-desktop-small">Email</th>
-    <th class="hidden-tablet hidden-phone hidden-desktop-small">Notes</th>
-    <th class="hidden-tablet hidden-phone hidden-desktop-small">Last Updated</th>    
-  </tr>
-
-<% @leads.each do |lead| %>
-  <tr>
-    <td><%= link_to lead.company_name, lead %></td>
-    <td><%= lead.contact %></td>
-    <td><%= lead.phone %></td>
-    <td class="hidden-tablet hidden-phone hidden-desktop-small"><%= lead.website %></td>
-    <td class="hidden-tablet hidden-phone hidden-desktop-small"><%= lead.email %></td>
-    <td class="hidden-tablet hidden-phone hidden-desktop-small"><%= lead.notes %></td>
-    <td class="hidden-tablet hidden-phone hidden-desktop-small"><%= lead.updated_at.strftime("%d %b %y") %></td>    
-  </tr>
-<% end %>
+<table id="leads" class="display">
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>Contact</th>
+        <th>Phone</th>
+        <th class="hidden-tablet hidden-phone hidden-desktop-small">Website</th>
+        <th class="hidden-tablet hidden-phone hidden-desktop-small">Email</th>
+        <th class="hidden-tablet hidden-phone hidden-desktop-small">Notes</th>
+        <th class="hidden-tablet hidden-phone hidden-desktop-small">Last Updated</th>    
+      </tr>
+    </thead>
+    <tbody>
+    <% @leads.each do |lead| %>
+      <tr>
+        <td><%= link_to lead.company_name, lead %></td>
+        <td><%= lead.contact %></td>
+        <td><%= lead.phone %></td>
+        <td class="hidden-tablet hidden-phone hidden-desktop-small"><%= lead.website %></td>
+        <td class="hidden-tablet hidden-phone hidden-desktop-small"><%= lead.email %></td>
+        <td class="hidden-tablet hidden-phone hidden-desktop-small"><%= lead.notes %></td>
+        <td class="hidden-tablet hidden-phone hidden-desktop-small"><%= lead.updated_at.strftime("%d %b %y") %></td>    
+      </tr>
+    <% end %>
+    </tbody>
 </table>
 <br />
 
