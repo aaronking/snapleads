@@ -1,18 +1,18 @@
 <% if user_signed_in? %>
-<div class="pull-right">
-    <%= link_to '+ New Lead', new_lead_path, class: 'btn btn-primary' %>
+<div class="pull-left">
+    <%= link_to "<i class=\"icon-plus icon-white\"></i>New Lead".html_safe, new_lead_path, class: "btn btn-custom" -%>
 </div>
 <div>
-<table id="leads" class="display table-bordered">
+<table id="leads" class="display table-bordered table-hover">
     <thead>
       <tr>
         <th>Company</th>
         <th>Contact</th>
-        <th class="hidden-phone">Phone</th>
+        <th class="hidden-tablet hidden-phone hidden-desktop-small">Phone</th>
         <th class="hidden-tablet hidden-phone hidden-desktop-small">Website</th>
         <th class="hidden-tablet hidden-phone hidden-desktop-small">Email</th>
         <th class="hidden-tablet hidden-phone hidden-desktop-small">Notes</th>
-        <th class="hidden-tablet hidden-phone hidden-desktop-small">Last Updated</th>    
+        <th class="hidden-tablet hidden-phone hidden-desktop-small">Updated</th>    
       </tr>
     </thead>
     <tbody>
@@ -20,11 +20,11 @@
       <tr>
         <td><%= link_to lead.company_name, lead %></td>
         <td><%= lead.contact %></td>
-        <td class="hidden-phone"><%= lead.phone %></td>
+        <td class="hidden-tablet hidden-phone hidden-desktop-small"><%= lead.phone %></td>
         <td class="hidden-tablet hidden-phone hidden-desktop-small"><%= lead.website %></td>
         <td class="hidden-tablet hidden-phone hidden-desktop-small"><%= lead.email %></td>
         <td class="hidden-tablet hidden-phone hidden-desktop-small"><%= lead.notes %></td>
-        <td class="hidden-tablet hidden-phone hidden-desktop-small"><%= lead.updated_at.strftime("%d %b %y") %></td>    
+        <td class="hidden-tablet hidden-phone hidden-desktop-small"><%= lead.updated_at.strftime("%d %b %y %H:%M") %></td>    
       </tr>
     <% end %>
     </tbody>

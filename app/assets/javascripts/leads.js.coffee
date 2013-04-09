@@ -4,6 +4,10 @@
 jQuery ->
   $('#leads').dataTable
     bJQueryUI: true
-    iDisplayLength: 50
+    iDisplayLength: 100
     bInfo: false
     bPaginate: false,
+    oLanguage: { "sSearch": "" } 
+    sDom: { "flrtip": "" } 
+
+   $('.dataTables_filter input').attr("placeholder", "Looking for something?");
