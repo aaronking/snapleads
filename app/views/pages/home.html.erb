@@ -1,19 +1,14 @@
-
 <% if user_signed_in? %>
-<div class="row">
-    <div class="span3">
-<h2>Leads</h2>
-</div>
 <div class="pull-right">
-<%= link_to 'Add New Lead', new_lead_path, class: 'btn btn-primary' %>
+    <%= link_to '+ New Lead', new_lead_path, class: 'btn btn-primary' %>
 </div>
-</div>
-<table id="leads" class="display">
+<div>
+<table id="leads" class="display table-bordered">
     <thead>
       <tr>
         <th>Company</th>
         <th>Contact</th>
-        <th>Phone</th>
+        <th class="hidden-phone">Phone</th>
         <th class="hidden-tablet hidden-phone hidden-desktop-small">Website</th>
         <th class="hidden-tablet hidden-phone hidden-desktop-small">Email</th>
         <th class="hidden-tablet hidden-phone hidden-desktop-small">Notes</th>
@@ -25,7 +20,7 @@
       <tr>
         <td><%= link_to lead.company_name, lead %></td>
         <td><%= lead.contact %></td>
-        <td><%= lead.phone %></td>
+        <td class="hidden-phone"><%= lead.phone %></td>
         <td class="hidden-tablet hidden-phone hidden-desktop-small"><%= lead.website %></td>
         <td class="hidden-tablet hidden-phone hidden-desktop-small"><%= lead.email %></td>
         <td class="hidden-tablet hidden-phone hidden-desktop-small"><%= lead.notes %></td>
@@ -34,18 +29,22 @@
     <% end %>
     </tbody>
 </table>
-<br />
+</div>
 
 <% else %>
 <div class="hero-unit">
-	<h1>Welcome to SnapLeads</h1>
-	<p>
-		The simplest CRM ever.
-	</p>
-	<p>
-		<%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-primary btn-large" %>
-	</p>
+    <h1>Welcome to SnapLeads</h1>
+    <p>
+        The simplest CRM ever.
+    </p>
+    <p>
+        <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-primary btn-large" %>
+    </p>
 </div>
 
-<% end%>
+<% end %>
+
+
+
+
 
