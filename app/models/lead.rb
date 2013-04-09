@@ -1,5 +1,5 @@
 class Lead < ActiveRecord::Base
-  attr_accessible :company_name, :contact, :email, :notes, :phone, :website
+  attr_accessible :company_name, :contact, :email, :notes, :phone, :website, :address, :city, :state, :zipcode
   
   belongs_to :user
   has_many :comments, as: :commentable

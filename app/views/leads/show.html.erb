@@ -42,6 +42,39 @@
           <%= @lead.notes %>
         </td>
       </tr>
+      <tr>
+        <td>
+          Address:
+        </td>
+        <td>
+          <%= @lead.address %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          City:
+        </td>
+        <td>
+          <%= @lead.city %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          State:
+        </td>
+        <td>
+          <%= @lead.state %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Zip:
+        </td>
+        <td>
+          <%= @lead.zipcode %>
+        </td>
+      </tr>
+
     </table>
 <%= link_to "<i class=\"icon-arrow-left\"></i>".html_safe, leads_path, class: "btn btn-small" -%>
 <%= link_to "<i class=\"icon-edit\"></i>".html_safe, edit_lead_path(@lead), class: "btn btn-small"  -%>
