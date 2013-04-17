@@ -10,7 +10,8 @@
       </ul>
     </div>
   <% end %>
-
+<div class="row">
+  <div class="span4">
   <div class="field">
     <%= f.label :company_name %>
     <%= f.text_field :company_name %>
@@ -35,10 +36,8 @@
     <%= f.label :email %>
     <%= f.text_field :email %>
   </div>
-  <div class="field">
-    <%= f.label :notes %>
-    <%= f.text_field :notes %>
-  </div>
+</div>
+<div class="span4">
   <div class="field">
     <%= f.label :address %>
     <%= f.text_field :address %>
@@ -55,8 +54,14 @@
     <%= f.label :zipcode %>
     <%= f.text_field :zipcode %>
   </div>
+  <div class="field">
+    <%= f.label :notes %>
+    <%= f.text_area :notes, :rows => 2 %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>
   </div>
+  </div>
+</div>
 <% end %>

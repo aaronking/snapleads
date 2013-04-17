@@ -1,7 +1,4 @@
 <% if user_signed_in? %>
-<div class="pull-left">
-    <%= link_to "<i class=\"icon-plus icon-white\"></i>New Lead".html_safe, new_lead_path, class: "btn btn-custom" -%>
-</div>
 <div>
 <table id="leads" class="display table-bordered table-hover">
     <thead>
@@ -20,7 +17,7 @@
     <% @leads.each do |lead| %>
       <tr>
         <td><%= link_to lead.company_name, lead %></td>
-        <td><%= lead.company_type %></td>
+        <td class="hidden-tablet hidden-phone hidden-desktop-small"><%= lead.company_type %></td>
         <td><%= lead.contact %></td>
         <td class="hidden-tablet hidden-phone hidden-desktop-small"><%= lead.phone %></td>
         <td class="hidden-tablet hidden-phone hidden-desktop-small"><%= lead.website %></td>
