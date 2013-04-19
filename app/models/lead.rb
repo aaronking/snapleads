@@ -4,7 +4,7 @@ class Lead < ActiveRecord::Base
     [address, city, state, zipcode].compact.join(', ')
   end
   geocoded_by :full_address
-  after_validation :geocode, :if => :full_address_changed?
+  after_validation :geocode, :if => :address_changed?
 
   belongs_to :user
   has_many :comments, as: :commentable
