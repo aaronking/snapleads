@@ -85,7 +85,22 @@
           <%= @lead.zipcode %>
         </td>
       </tr>
-
+      <tr>
+        <td>
+          Latitude:
+        </td>
+        <td>
+          <%= @lead.latitude %>
+        </td>
+      </tr>      
+      <tr>
+        <td>
+          Longitude:
+        </td>
+        <td>
+          <%= @lead.longitude %>
+        </td>
+      </tr>
     </table>
 <%= link_to "<i class=\"icon-arrow-left\"></i>".html_safe, leads_path, class: "btn btn-small" -%>
 <%= link_to "<i class=\"icon-edit\"></i>".html_safe, edit_lead_path(@lead), class: "btn btn-small"  -%>
@@ -99,7 +114,13 @@
   <b>Last Updated:</b>
   <%= @lead.updated_at.strftime("%B %d, %Y %I:%M%p") %>
 </p>
-
+<hr>
+<h4>Other leads nearby:</h4>
+<ul>
+<% for lead in @lead.nearbys(10) %>
+  <li><%= link_to lead.company_name, lead %> (<%= lead.distance.round(2) %> miles)</li>
+<% end %>
+</ul>
 
 
 </div>
