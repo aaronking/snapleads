@@ -91,14 +91,16 @@
       <%= link_to "<i class=\"icon-edit\"></i>".html_safe, edit_lead_path(@lead), class: "btn btn-small"  -%>
       <%= link_to "<i class=\"icon-trash\"></i>".html_safe, @lead, method: :delete, data: { confirm: 'Are you sure you want to delete this lead?' }, class: "btn btn-small" -%>
       <hr>
-      <h4>Other leads nearby:</h4>
+      <h4>Map:</h4>
           <%= image_tag "http://maps.google.com/maps/api/staticmap?size=600x150&sensor=false&zoom=12&markers=#{@lead.latitude}%2C#{@lead.longitude}" %>
         <br>
+        <h5>Other Leads Nearby:</h5>
         <ul>
         <% for lead in @lead.nearbys(20) %>
         <li><%= link_to lead.company_name, lead %> (<%= lead.distance.round(2) %> miles)</li>
         <% end %>
         </ul>
+        <hr>
                 <br>
         <p>
           <b>Last Updated:</b>
