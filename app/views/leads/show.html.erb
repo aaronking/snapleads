@@ -97,7 +97,7 @@
         <h5>Other Leads Nearby:</h5>
         <ul>
         <% for lead in @lead.nearbys(20) %>
-        <li><%= link_to lead.company_name, lead %> (<%= lead.distance.round(2) %> miles)</li>
+        <li><%= link_to lead.company_name, lead %> (<%= lead.distance.round %> miles)</li>
         <% end %>
         </ul>
         <hr>
