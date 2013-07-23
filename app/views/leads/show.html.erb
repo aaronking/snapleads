@@ -94,14 +94,7 @@
       <h4>Map:</h4>
           <%= image_tag "http://maps.google.com/maps/api/staticmap?size=600x150&sensor=false&zoom=12&markers=#{@lead.latitude}%2C#{@lead.longitude}" %>
         <br>
-        <h5>Other Leads Nearby:</h5>
-        <ul>
-        <% for lead in @lead.nearbys(20) %>
-        <li><%= link_to lead.company_name, lead %> (<%= lead.distance.round %> miles)</li>
-        <% end %>
-        </ul>
-        <hr>
-                <br>
+        <br>
         <p>
           <b>Last Updated:</b>
           <%= @lead.updated_at.strftime("%B %d, %Y %I:%M%p") %>
