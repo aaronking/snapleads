@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.purr
+//= require best_in_place
 //= require dataTables/jquery.dataTables
 //= require bootstrap
 //= require_tree .

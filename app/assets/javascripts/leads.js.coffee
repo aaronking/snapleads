@@ -11,3 +11,5 @@ jQuery ->
     sDom: { "flrtip": "" } 
 
    $('.dataTables_filter input').attr("placeholder", "Looking for something?");
+
+   $('.best_in_place').best_in_place()

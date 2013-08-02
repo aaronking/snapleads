@@ -48,14 +48,6 @@
         </tr>
         <tr>
           <td>
-            Notes:
-          </td>
-          <td>
-            <%= @lead.notes %>
-          </td>
-        </tr>
-        <tr>
-          <td>
             Address:
           </td>
           <td>
@@ -105,7 +97,15 @@
         </p>
       </div>
       <div class="span6">
+        <div>
+             Status:
+            <br> <h5><%= best_in_place @lead, :notes %> </h5>
+        </div>
+        <hr>
+        <br>
+        <div>
         <%= render "comments/form" %>
         <%= render "comments/comments" %>
+      </div>
       </div>
   </div>

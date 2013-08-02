@@ -7,6 +7,8 @@ gem 'jquery-ui-rails'
 gem 'geocoder'
 gem 'newrelic_rpm'
 
+gem 'best_in_place'
+
 group :production do
 	gem 'pg'
 end
