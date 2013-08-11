@@ -11,7 +11,7 @@
             Company Type:
           </td>
           <td>
-            <%= @lead.company_type %>
+            <%= best_in_place @lead, :company_type %>
           </td>
         </tr>
         <tr>
@@ -19,7 +19,7 @@
             Contact:
           </td>
           <td>
-            <%= @lead.contact %>
+            <%= best_in_place @lead, :contact %>
           </td>
         </tr>
         <tr>
@@ -27,7 +27,7 @@
             Phone:
           </td>
           <td>
-            <%= @lead.phone %>
+            <%= best_in_place @lead, :phone %>
           </td>
         </tr>
         <tr>
@@ -35,7 +35,7 @@
             Email:
           </td>
           <td>
-            <%= @lead.email %>
+            <%= best_in_place @lead, :email %>
           </td>
         </tr>
           <tr>
@@ -51,7 +51,7 @@
             Address:
           </td>
           <td>
-            <%= @lead.address %>
+            <%= best_in_place @lead, :address %>
           </td>
         </tr>
         <tr>
@@ -59,7 +59,7 @@
             City:
           </td>
           <td>
-            <%= @lead.city %>
+            <%= best_in_place @lead, :city %>
           </td>
         </tr>
         <tr>
@@ -67,7 +67,7 @@
             State:
           </td>
           <td>
-            <%= @lead.state %>
+            <%= best_in_place @lead, :state %>
           </td>
         </tr>
         <tr>
@@ -75,7 +75,7 @@
             Zip:
           </td>
           <td>
-            <%= @lead.zipcode %>
+            <%= best_in_place @lead, :zipcode %>
           </td>
         </tr>
       </table>
